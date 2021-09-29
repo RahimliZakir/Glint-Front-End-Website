@@ -1,3 +1,36 @@
 @import "_reset.less";
 @import "_flexmixin.less";
 
+header {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5% 0;
+    .nav-container {
+      .nav-row {
+        .nav-left {
+          .img-div {
+            width: 15%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  #welcome {
+    background-image: url("../images/hero-bg.jpg");
+    height: 400px;
+    .welcome-container {
+      .welcome-row {
+        padding: 0;
+      }
+    }
+  }
+}
