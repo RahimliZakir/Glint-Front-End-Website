@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "rootDir": "assets/ts/",
+    "outDir": "assets/js/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node"
+  }
+}
