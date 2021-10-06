@@ -2,6 +2,42 @@
 @import "_flexmixin.less";
 @import "_commons.less";
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 2000px;
+}
+
+.scroll-top-div {
+  .scroll-top {
+    position: fixed;
+    right: 60px;
+    bottom: 25px;
+    font-size: 1.2rem;
+    display: inline-block;
+    color: #808080;
+    background-color: #000;
+    visibility: hidden;
+    opacity: 0;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    transition: 0.5s;
+  }
+
+  .scroll-top:hover {
+    color: white;
+  }
+
+  .scroll-vis {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 header {
   nav {
     position: fixed;
@@ -66,7 +102,6 @@ main {
     background-size: cover;
     .welcome-container {
       .welcome-row {
-        align-items: center;
         padding: 0;
         .welcome-left {
           padding: 0 0 0 6%;
@@ -112,7 +147,13 @@ main {
         }
 
         .welcome-right {
+          padding-top: 5.5%;
+          .flexing(flex, flex-end);
           .welcome-right-icons {
+            li:not(:last-child) {
+              margin-bottom: 40%;
+            }
+
             a {
               .flexing(center, center);
               color: white;
