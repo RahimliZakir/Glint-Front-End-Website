@@ -1,5 +1,6 @@
 @import "_reset.less";
 @import "_flexmixin.less";
+@import "_commons.less";
 
 header {
   nav {
@@ -10,12 +11,42 @@ header {
     padding: 2.5% 0;
     .nav-container {
       .nav-row {
+        align-items: center;
         .nav-left {
           .img-div {
             width: 15%;
             img {
               width: 100%;
             }
+          }
+        }
+
+        .nav-right {
+          .flexing(center, flex-end);
+
+          .sidebar-btn {
+            .flexing;
+            border: none;
+            background-color: transparent;
+            color: @green-text;
+            transition: color 0.5s ease-in-out;
+
+            span {
+              font-size: 0.8rem;
+              margin-right: 15px;
+              letter-spacing: 1px;
+              font-weight: 600;
+            }
+
+            i {
+              display: inline-block;
+              color: white;
+              font-size: 1.6rem;
+            }
+          }
+
+          .sidebar-btn:hover {
+            color: white;
           }
         }
       }
@@ -25,11 +56,74 @@ header {
 
 main {
   #welcome {
-    background-image: url("../images/hero-bg.jpg");
-    height: 400px;
+    padding: 17.5% 0 7.5% 0;
+    background-image: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(13, 13, 14, 0.8104283949908089) 1%
+      ),
+      url("../images/hero-bg.jpg");
+    background-size: cover;
     .welcome-container {
       .welcome-row {
+        align-items: center;
         padding: 0;
+        .welcome-left {
+          padding: 0 0 0 6%;
+          h6 {
+            color: #818486;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+
+          h1 {
+            color: white;
+            font-weight: 600;
+            font-size: 3.5rem;
+            line-height: 75px;
+          }
+
+          .welcome-buttons-box {
+            margin-top: 15%;
+            .left-welcome-btn,
+            .right-welcome-btn {
+              display: inline-block;
+              border: 2px solid white;
+              color: white;
+              background-color: transparent;
+              text-transform: uppercase;
+              padding: 2.5% 5%;
+              letter-spacing: 2px;
+              font-weight: 600;
+              font-size: 0.8rem;
+              transition: 0.7s;
+            }
+
+            .left-welcome-btn:hover,
+            .right-welcome-btn:hover {
+              background-color: white;
+              color: black;
+            }
+
+            .right-welcome-btn {
+              margin-left: 2.5%;
+            }
+          }
+        }
+
+        .welcome-right {
+          .welcome-right-icons {
+            a {
+              .flexing(center, center);
+              color: white;
+              width: 35px;
+              height: 35px;
+              border: 2px solid white;
+              border-radius: 50%;
+              font-size: 0.8rem;
+            }
+          }
+        }
       }
     }
   }
