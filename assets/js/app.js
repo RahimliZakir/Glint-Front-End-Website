@@ -10,7 +10,21 @@ $(function () {
         }
     });
     var sidebarBtn = $(".sidebar-btn");
-    $(sidebarBtn).on("click", function () {
-        console.log("Clicked!");
+    var aside = $("aside");
+    var asideCrossBtn = $(".aside-cross-btn");
+    $(aside).click(function (e) {
+        e.stopPropagation();
+    });
+    $(sidebarBtn).on("click", function (e) {
+        e.stopPropagation();
+        $(aside).addClass("show");
+    });
+    $(asideCrossBtn).on("click", function () {
+        $(aside).removeClass("show");
+    });
+    $(document.body).click(function (e) {
+        if ($(aside).hasClass("show")) {
+            $(aside).removeClass("show");
+        }
     });
 });

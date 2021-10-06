@@ -12,8 +12,25 @@ $(function () {
   });
 
   let sidebarBtn: any = $(".sidebar-btn");
+  let aside: any = $("aside");
+  let asideCrossBtn: any = $(".aside-cross-btn");
 
-  $(sidebarBtn).on("click", function () {
-    console.log("Clicked!");
+  $(aside).click((e) => {
+    e.stopPropagation();
+  });
+
+  $(sidebarBtn).on("click", function (e) {
+    e.stopPropagation();
+    $(aside).addClass("show");
+  });
+
+  $(asideCrossBtn).on("click", function () {
+    $(aside).removeClass("show");
+  });
+
+  $(document.body).click(function (e) {
+    if ($(aside).hasClass("show")) {
+      $(aside).removeClass("show");
+    }
   });
 });
