@@ -37,6 +37,7 @@ html {
 aside {
   position: fixed;
   overflow: auto;
+  overflow-x: hidden;
   width: 22.5%;
   top: 0;
   right: -22.5%;
@@ -47,7 +48,28 @@ aside {
 
   .aside-container {
     .aside-row {
+      position: relative;
+      transform: translate(100%, 0);
       align-items: center;
+      transition: 1s ease-out;
+
+      .ar-shadow {
+        position: absolute;
+        background-color: #0c0c0c;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        visibility: visible;
+        opacity: 1;
+        transition: 1s ease-out;
+      }
+
+      .ar-shadow-vis {
+        visibility: hidden;
+        opacity: 0;
+      }
+
       .aside-heading {
         h6 {
           color: @green-text;
@@ -128,6 +150,10 @@ aside {
         }
       }
     }
+
+    .ar-show {
+      transform: translate(0, 0);
+    }
   }
 }
 
@@ -162,7 +188,8 @@ header {
             border: none;
             background-color: transparent;
             color: @green-text;
-            transition: color 0.5s ease-in-out;
+            padding: 10px;
+            transition: 0.5s ease-in-out;
 
             span {
               font-size: 0.8rem;
@@ -176,6 +203,10 @@ header {
               color: white;
               font-size: 1.6rem;
             }
+          }
+
+          .sidebar-scroll {
+            background-color: black;
           }
 
           .sidebar-btn:hover {
