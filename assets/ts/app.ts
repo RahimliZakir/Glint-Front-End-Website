@@ -47,4 +47,14 @@ $(function () {
       $(asideShadow).removeClass("ar-shadow-vis");
     }
   });
+
+  let welcomeIcon: any = $(".welcome-right-icons a");
+
+  $(welcomeIcon).mouseover((e) => {
+    $(e.currentTarget).prev("h6.welcome-icon-h6").addClass("icon-vis");
+  });
+
+  $(welcomeIcon).mouseout((e) => {
+    $(e.currentTarget).prev("h6.welcome-icon-h6").removeClass("icon-vis");
+  });
 });

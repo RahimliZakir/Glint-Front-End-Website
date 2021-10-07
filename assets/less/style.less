@@ -275,11 +275,30 @@ main {
         }
 
         .welcome-right {
-          padding-top: 5.5%;
-          .flexing(flex, flex-end);
+          padding: 5.5% 2.5% 0 0;
           .welcome-right-icons {
+            text-align: right;
+            li {
+              position: relative;
+              .flexing(center, flex-end);
+            }
+
             li:not(:last-child) {
-              margin-bottom: 40%;
+              margin-bottom: 5%;
+            }
+
+            .welcome-icon-h6 {
+              position: absolute;
+              right: 15%;
+              margin: 0;
+              font-size: 0;
+              color: @green-text;
+              font-weight: 600;
+              transition: 0.5s;
+            }
+
+            .icon-vis {
+              font-size: 0.8rem;
             }
 
             a {
@@ -291,6 +310,78 @@ main {
               border-radius: 50%;
               font-size: 0.8rem;
             }
+          }
+        }
+      }
+    }
+  }
+
+  #we-are-glint {
+    background-color: @green-text;
+    padding: 12.5% 0;
+    .we-are-glint-container {
+      .we-are-glint-row {
+        .we-are-glint-h3 {
+          text-align: center;
+          font-size: 1.1rem;
+          color: black;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        .we-are-glint-h1 {
+          position: relative;
+          text-align: center;
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 4.8rem;
+        }
+
+        .we-are-glint-h1::after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 50%;
+          background-color: #6bc877;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -45%;
+        }
+
+        .we-are-glint-description {
+          font-family: "Lora", serif;
+          text-align: center;
+          padding: 0 3.5%;
+          margin: 5% 0;
+          font-size: 1.6rem;
+        }
+
+        .we-are-glint-stats-ul {
+          .flexing(null, space-between);
+
+          li {
+            position: relative;
+            h1 {
+              color: #ffffff;
+              font-weight: 600;
+              font-size: 4.8rem;
+              text-align: center;
+            }
+
+            h5 {
+              text-align: center;
+              font-weight: 600;
+            }
+          }
+
+          li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: #6bc877;
+            right: -50%;
+            top: 0;
           }
         }
       }
