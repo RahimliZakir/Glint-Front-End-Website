@@ -36,6 +36,7 @@ html {
 
 aside {
   position: fixed;
+  z-index: 2;
   overflow: auto;
   overflow-x: hidden;
   width: 22.5%;
@@ -382,6 +383,69 @@ main {
             background-color: #6bc877;
             right: -50%;
             top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #what-we-do {
+    padding: 12.5% 0;
+    .what-we-do-container {
+      .what-we-do-row {
+        .what-we-do-h3 {
+          text-align: center;
+          font-size: 1.1rem;
+          color: @green-text;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        .what-we-do-h1 {
+          position: relative;
+          text-align: center;
+          color: black;
+          padding: 0 7.5%;
+          font-weight: 600;
+          font-size: 3.2rem;
+          margin-bottom: 10%;
+        }
+
+        .what-we-do-h1::after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 50%;
+          background-color: #e5e5e5;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -45%;
+        }
+
+        .what-we-do-services-col {
+          margin-bottom: 3.5%;
+          .what-we-do-services-col-row {
+            .what-we-do-left {
+              i {
+                display: inline-block;
+                color: @green-text;
+                font-size: 3rem;
+              }
+            }
+
+            .what-we-do-right {
+              h3 {
+                color: black;
+                font-weight: 600;
+                margin-bottom: 5.5%;
+              }
+
+              p {
+                font-family: "Lora", serif;
+                color: #757575;
+                font-size: 1.1rem;
+              }
+            }
           }
         }
       }
