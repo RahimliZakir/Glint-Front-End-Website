@@ -390,7 +390,7 @@ main {
   }
 
   #what-we-do {
-    padding: 12.5% 0;
+    padding: 12.5% 0 7.5% 0;
     .what-we-do-container {
       .what-we-do-row {
         .what-we-do-h3 {
@@ -445,6 +445,119 @@ main {
                 color: #757575;
                 font-size: 1.1rem;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #recent-works {
+    background-color: #111111;
+    padding: 12.5% 0;
+    .recent-works-container {
+      .recent-works-row {
+        .recent-works-h3 {
+          text-align: center;
+          font-size: 1.1rem;
+          color: @green-text;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        .recent-works-h1 {
+          position: relative;
+          text-align: center;
+          color: white;
+          padding: 0 12.5%;
+          font-weight: 600;
+          font-size: 3.2rem;
+          margin-bottom: 10%;
+        }
+
+        .recent-works-h1::after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 50%;
+          background-color: #1d1d1d;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -45%;
+        }
+
+        .recent-works-images-col {
+          position: relative;
+          padding: 0;
+          .img-div {
+            cursor: pointer;
+            overflow: hidden;
+            img {
+              width: 100%;
+              transition: 0.5s;
+            }
+
+            .recent-works-image-shadow {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              padding: 5%;
+              background: rgb(2, 0, 36);
+              background: linear-gradient(
+                90deg,
+                rgba(2, 0, 36, 1) 0%,
+                rgba(1, 1, 1, 0.8972631288843662) 0%
+              );
+              visibility: hidden;
+              opacity: 0;
+              transition: 0.5s;
+
+              .recent-works-shadow-row {
+                .recent-works-shadow-col {
+                  .shadow-share-btn {
+                    display: inline-block;
+                    .flexing(center, center);
+                    color: white;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    font-size: 1.6rem;
+                    width: 40px;
+                    height: 40px;
+                  }
+
+                  .shadow-plus-btn {
+                    display: inline-block;
+                    color: white;
+                    font-size: 1.6rem;
+                  }
+
+                  .shadow-plus-h3 {
+                    color: #ffffff;
+                    font-size: 0.9rem;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                  }
+
+                  .shadow-plus-p {
+                    color: rgba(255, 255, 255, 0.5);
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+          }
+
+          .img-div:hover {
+            img {
+              transform: scale(1.1);
+            }
+
+            .recent-works-image-shadow {
+              visibility: visible;
+              opacity: 1;
             }
           }
         }
