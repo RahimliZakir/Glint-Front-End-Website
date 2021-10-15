@@ -501,37 +501,39 @@ main {
     background-color: #111111;
     padding: 12.5% 0;
     .recent-works-container {
+      .recent-works-h3 {
+        text-align: center;
+        font-size: 1.1rem;
+        color: @green-text;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+
+      .recent-works-h1 {
+        position: relative;
+        text-align: center;
+        color: white;
+        padding: 0 12.5%;
+        font-weight: 600;
+        font-size: 3.2rem;
+        margin-bottom: 10%;
+      }
+
+      .recent-works-h1::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 50%;
+        background-color: #1d1d1d;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -45%;
+      }
+
       .recent-works-row {
-        .recent-works-h3 {
-          text-align: center;
-          font-size: 1.1rem;
-          color: @green-text;
-          letter-spacing: 2px;
-          font-weight: 600;
-        }
-
-        .recent-works-h1 {
-          position: relative;
-          text-align: center;
-          color: white;
-          padding: 0 12.5%;
-          font-weight: 600;
-          font-size: 3.2rem;
-          margin-bottom: 10%;
-        }
-
-        .recent-works-h1::after {
-          content: "";
-          position: absolute;
-          height: 1px;
-          width: 50%;
-          background-color: #1d1d1d;
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: -45%;
-        }
-
         .recent-works-images-col {
+          padding: 0;
+
           .img-div {
             cursor: pointer;
             overflow: hidden;
