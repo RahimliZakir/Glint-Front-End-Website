@@ -57,4 +57,6 @@ $(function () {
   $(welcomeIcon).mouseout((e) => {
     $(e.currentTarget).prev("h6.welcome-icon-h6").removeClass("icon-vis");
   });
+
+  
 });
