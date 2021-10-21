@@ -58,7 +58,7 @@ $(function () {
     $(e.currentTarget).prev("h6.welcome-icon-h6").removeClass("icon-vis");
   });
 
-  $(".recent-works-row").masonry({
+  (<any>$(".recent-works-row")).masonry({
     itemSelector: ".recent-works-images-col",
   });
 });

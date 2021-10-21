@@ -560,9 +560,31 @@ main {
               transition: 0.5s;
 
               .recent-works-shadow-row {
-                .recent-works-shadow-col {
-                  .shadow-share-btn {
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+                .recent-works-shadow-col-share-btn {
+                  position: relative;
+                  display: flex;
+                  overflow: hidden;
+
+                  .flexbox-logic-share-btn {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                  }
+
+                  span {
                     display: inline-block;
+                    position: absolute;
+                    width: 2px;
+                    height: 20px;
+                    background-color: white;
+                  }
+
+                  .shadow-share-btn {
                     .flexing(center, center);
                     color: white;
                     border: 2px solid white;
@@ -577,13 +599,28 @@ main {
                     color: black;
                     background-color: white;
                   }
+                }
 
+                // .recent-works-shadow-col-share-btn::before {
+                //   content: "";
+                //   position: absolute;
+                //   background-color: white;
+                //   top: 0;
+                //   left: 0;
+                //   width: 2px;
+                //   height: 20px;
+                // }
+
+                .recent-works-shadow-col-plus-btn {
+                  .flexing(center, center);
                   .shadow-plus-btn {
                     display: inline-block;
                     color: white;
                     font-size: 1.6rem;
                   }
+                }
 
+                .recent-works-shadow-col-texts {
                   .shadow-plus-h3 {
                     color: #ffffff;
                     font-size: 0.9rem;
