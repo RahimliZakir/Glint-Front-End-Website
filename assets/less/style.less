@@ -544,6 +544,7 @@ main {
 
             .recent-works-image-shadow {
               position: absolute;
+              overflow: hidden;
               top: 0;
               left: 0;
               right: 0;
@@ -567,7 +568,6 @@ main {
                 .recent-works-shadow-col-share-btn {
                   position: relative;
                   display: flex;
-                  overflow: hidden;
 
                   .flexbox-logic-share-btn {
                     display: flex;
@@ -576,15 +576,8 @@ main {
                     justify-content: space-between;
                   }
 
-                  span {
-                    display: inline-block;
-                    position: absolute;
-                    width: 2px;
-                    height: 20px;
-                    background-color: white;
-                  }
-
                   .shadow-share-btn {
+                    position: relative;
                     .flexing(center, center);
                     color: white;
                     border: 2px solid white;
@@ -598,6 +591,17 @@ main {
                   .shadow-share-btn:hover {
                     color: black;
                     background-color: white;
+                  }
+
+                  .shadow-share-btn::before {
+                    content: "";
+                    position: absolute;
+                    width: 2px;
+                    height: 31px;
+                    background-color: white;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: -31px;
                   }
                 }
 
