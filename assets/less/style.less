@@ -497,9 +497,78 @@ main {
     }
   }
 
+  .masonry-carousel {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #000;
+    z-index: 1000;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .masonry-carousel-container-fluid {
+      .masonry-carousel-row {
+        .masonry-carousel-box {
+          .masonry-carousel-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 1.5% 0;
+
+            .masonry-carousel-counter {
+              text-align: start;
+              color: #bebebe;
+              font-size: 0.8rem;
+              width: 100%;
+            }
+
+            .img-div {
+              width: 60%;
+              img {
+                width: 100%;
+                height: 450px;
+                object-fit: contain;
+              }
+            }
+
+            .masonry-carousel-heading,
+            .masonry-carousel-description {
+              text-align: center;
+              width: 100%;
+              font-weight: 600;
+            }
+
+            .masonry-carousel-heading {
+              color: white;
+              font-size: 1.1rem;
+              margin-bottom: 0;
+            }
+
+            .masonry-carousel-description {
+              color: #7c7c7c;
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
   #recent-works {
     background-color: #111111;
     padding: 12.5% 0;
+
     .recent-works-container {
       .recent-works-h3 {
         text-align: center;
