@@ -96,7 +96,7 @@ $(function () {
     $(masonryCarouselImgDiv).click(function (e) {
         e.stopPropagation();
     });
-    // Vanilla JavaScript
+    // Pure TypeScript
     var recentWorksRow = document.querySelector(".recent-works-row");
     var recentWorksChildren = recentWorksRow.children;
     var masonryCarousel = document.querySelector(".masonry-carousel");
@@ -118,6 +118,6 @@ $(function () {
             $(selectedMasonryChild).addClass("active");
         });
     }
-    // Vanilla JavaScript
+    // Pure TypeScript
     //Masonry Images Carousel
 });

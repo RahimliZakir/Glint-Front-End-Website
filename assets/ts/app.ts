@@ -110,7 +110,7 @@ $(function () {
     e.stopPropagation();
   });
 
-  // Vanilla JavaScript
+  // Pure TypeScript
   let recentWorksRow: any = document.querySelector(".recent-works-row");
   let recentWorksChildren: any = recentWorksRow.children;
 
@@ -139,6 +139,6 @@ $(function () {
       $(selectedMasonryChild).addClass("active");
     });
   }
-  // Vanilla JavaScript
+  // Pure TypeScript
   //Masonry Images Carousel
 });
