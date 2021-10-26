@@ -61,4 +61,8 @@ $(function () {
   (<any>$(".recent-works-row")).masonry({
     itemSelector: ".recent-works-images-col",
   });
+
+  //Masonry Images Carousel
+  
+  //Masonry Images Carousel
 });
