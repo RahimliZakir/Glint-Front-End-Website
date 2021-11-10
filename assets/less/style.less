@@ -519,18 +519,32 @@ main {
       .masonry-carousel-row {
         .masonry-carousel-box {
           .masonry-carousel-item {
-            display: flex;
+            display: none;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             height: 100vh;
             padding: 1.5% 0;
 
-            .masonry-carousel-counter {
-              text-align: start;
-              color: #bebebe;
-              font-size: 0.8rem;
+            &.active {
+              display: flex;
+            }
+
+            .masonry-carousel-counter-div {
+              position: relative;
+              z-index: 13;
+              background: linear-gradient(
+                90deg,
+                rgba(2, 0, 36, 1) 0%,
+                rgba(0, 0, 0, 0.5471230728619573) 0%
+              );
               width: 100%;
+
+              .masonry-carousel-counter {
+                text-align: start;
+                color: #bebebe;
+                font-size: 0.8rem;
+              }
             }
 
             .img-div {
@@ -542,11 +556,21 @@ main {
               }
             }
 
-            .masonry-carousel-heading,
-            .masonry-carousel-description {
-              text-align: center;
+            .carousel-article-side-div {
+              position: relative;
+              z-index: 13;
+              background: linear-gradient(
+                90deg,
+                rgba(2, 0, 36, 1) 0%,
+                rgba(0, 0, 0, 0.5471230728619573) 0%
+              );
               width: 100%;
-              font-weight: 600;
+
+              .masonry-carousel-heading,
+              .masonry-carousel-description {
+                text-align: center;
+                font-weight: 600;
+              }
             }
 
             .masonry-carousel-heading {
@@ -636,6 +660,8 @@ main {
 
                 .recent-works-shadow-col-share-btn {
                   position: relative;
+                  transform: translateY(-150%);
+                  transition: 0.5s;
 
                   .flexbox-logic-share-btn {
                     display: flex;
@@ -683,6 +709,9 @@ main {
                 }
 
                 .recent-works-shadow-col-texts {
+                  transform: translateY(150%);
+                  transition: 0.5s;
+
                   .shadow-plus-h3 {
                     color: #ffffff;
                     font-size: 0.9rem;
@@ -707,6 +736,14 @@ main {
             .recent-works-image-shadow {
               visibility: visible;
               opacity: 1;
+
+              .recent-works-shadow-col-share-btn {
+                transform: translateY(0);
+              }
+
+              .recent-works-shadow-col-texts {
+                transform: translateY(0);
+              }
             }
           }
         }
