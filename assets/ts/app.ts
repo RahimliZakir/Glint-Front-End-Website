@@ -180,8 +180,16 @@ $(function () {
 
   let masonryCarousel: any = document.querySelector(".masonry-carousel");
 
+  let progressBar: any = $(".progressbar");
+
   for (let item of recentWorksChildren) {
     item.addEventListener("click", function (e: any) {
+      $(progressBar).addClass("progress");
+
+      setTimeout(() => {
+        $(progressBar).removeClass("progress");
+      }, 700);
+
       let masonryImagesArr = (<any>Array).from(recentWorksRow.children);
 
       let masonryIndex: number = (<any>masonryImagesArr).findIndex(

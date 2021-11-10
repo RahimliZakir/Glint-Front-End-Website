@@ -157,9 +157,14 @@ $(function () {
     var recentWorksRow = document.querySelector(".recent-works-row");
     var recentWorksChildren = recentWorksRow.children;
     var masonryCarousel = document.querySelector(".masonry-carousel");
+    var progressBar = $(".progressbar");
     for (var _i = 0, recentWorksChildren_1 = recentWorksChildren; _i < recentWorksChildren_1.length; _i++) {
         var item = recentWorksChildren_1[_i];
         item.addEventListener("click", function (e) {
+            $(progressBar).addClass("progress");
+            setTimeout(function () {
+                $(progressBar).removeClass("progress");
+            }, 700);
             var masonryImagesArr = Array.from(recentWorksRow.children);
             var masonryIndex = masonryImagesArr.findIndex(function (item) { return e.currentTarget == item; });
             masonryCarousel.classList.add("visible");
