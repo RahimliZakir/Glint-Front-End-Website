@@ -97,6 +97,37 @@ $(function () {
         }
     });
     var masonryCarouselImgDiv = $(".masonry-carousel-item>.img-div");
+    $(masonryCarouselImgDiv).swipe(function (direction) {
+        if (direction == "left") {
+            var active = $(".masonry-carousel-item.active");
+            var next = $(active).next(".masonry-carousel-item");
+            $(active).removeClass("active");
+            if ($(next).length === 0) {
+                var nextNow = $(".masonry-carousel-item:first-of-type");
+                $(nextNow).addClass("active");
+            }
+            else {
+                $(next).addClass("active");
+            }
+        }
+        else {
+            var active = $(".masonry-carousel-item.active");
+            var prev = $(active).prev(".masonry-carousel-item");
+            $(active).removeClass("active");
+            if ($(prev).length === 0) {
+                var nextNow = $(".masonry-carousel-item:last-of-type");
+                $(nextNow).addClass("active");
+            }
+            else {
+                $(prev).addClass("active");
+            }
+        }
+    }, {
+        preventDefault: true,
+        mouse: true,
+        pen: true,
+        distance: 50,
+    });
     $(masonryCarouselImgDiv).on("click", function () {
         if ($(this).hasClass("grabed")) {
             $(this).removeClass("grabed");

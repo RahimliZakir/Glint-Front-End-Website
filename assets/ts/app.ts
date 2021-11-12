@@ -114,6 +114,42 @@ $(function () {
 
   let masonryCarouselImgDiv: any = $(".masonry-carousel-item>.img-div");
 
+  (<any>$(masonryCarouselImgDiv)).swipe(
+    function (direction:string){
+      if(direction=="left"){
+        let active: any = $(".masonry-carousel-item.active");
+      let next: any = $(active).next(".masonry-carousel-item");
+
+      $(active).removeClass("active");
+
+      if ($(next).length === 0) {
+        let nextNow: any = $(".masonry-carousel-item:first-of-type");
+        $(nextNow).addClass("active");
+      } else {
+        $(next).addClass("active");
+      }
+      }else{
+        let active: any = $(".masonry-carousel-item.active");
+        let prev: any = $(active).prev(".masonry-carousel-item");
+  
+        $(active).removeClass("active");
+  
+        if ($(prev).length === 0) {
+          let nextNow: any = $(".masonry-carousel-item:last-of-type");
+          $(nextNow).addClass("active");
+        } else {
+          $(prev).addClass("active");
+        }
+      }
+    },
+    {
+      preventDefault: true,
+      mouse: true,
+      pen: true,
+      distance: 50,
+    }
+  );
+
   $(masonryCarouselImgDiv).on("click", function () {
     if ($(this).hasClass("grabed")) {
       $(this).removeClass("grabed");

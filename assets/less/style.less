@@ -624,26 +624,29 @@ main {
   }
 
   #recent-works {
-    background-color: #111111;
-    padding: 12.5% 0;
-
     .recent-works-container {
-      .recent-works-h3 {
-        text-align: center;
-        font-size: 1.1rem;
-        color: @green-text;
-        letter-spacing: 2px;
-        font-weight: 600;
-      }
+      padding: 0;
+      .recent-works-texts-div {
+        background-color: #111111;
+        padding: 12.5% 0;
 
-      .recent-works-h1 {
-        position: relative;
-        text-align: center;
-        color: white;
-        padding: 0 12.5%;
-        font-weight: 600;
-        font-size: 3.2rem;
-        margin-bottom: 10%;
+        .recent-works-h3 {
+          text-align: center;
+          font-size: 1.1rem;
+          color: @green-text;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        .recent-works-h1 {
+          position: relative;
+          text-align: center;
+          color: white;
+          padding: 0 12.5%;
+          font-weight: 600;
+          font-size: 3.2rem;
+          margin-bottom: 10%;
+        }
       }
 
       .recent-works-h1::after {
@@ -658,6 +661,10 @@ main {
       }
 
       .recent-works-row {
+        margin: 0 5%;
+        margin-top: -15%;
+        padding-bottom: 12.5%;
+
         .recent-works-images-col {
           padding: 0;
 
