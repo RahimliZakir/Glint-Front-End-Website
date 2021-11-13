@@ -51,27 +51,9 @@ $(function () {
     $(".recent-works-row").masonry({
         itemSelector: ".recent-works-images-col",
     });
-    //Masonry Images Carousel
-    // (<any>$(".owl-carousel")).owlCarousel({
-    //   loop: true,
-    //   dots: false,
-    //   margin: 200,
-    //   responsive: {
-    //     0: {
-    //       items: 1,
-    //     },
-    //     600: {
-    //       items: 1,
-    //     },
-    //     1000: {
-    //       items: 1,
-    //     },
-    //   },
-    // });
     var masonryCarouselItem = $(".masonry-carousel-item");
     $(document.body).keyup(function (e) {
         if (e.key == "ArrowLeft") {
-            // $(".masonry-carousel-box .owl-prev").trigger("click");
             var active = $(".masonry-carousel-item.active");
             var prev = $(active).prev(".masonry-carousel-item");
             $(active).removeClass("active");
@@ -96,8 +78,9 @@ $(function () {
             }
         }
     });
-    var masonryCarouselImgDiv = $(".masonry-carousel-item>.img-div");
-    $(masonryCarouselImgDiv).swipe(function (direction) {
+    var masonryCarouselZooFigure = $(".masonry-carousel-item>figure");
+    //* jQuery Swipe Event
+    $(masonryCarouselZooFigure).swipe(function (direction) {
         if (direction == "left") {
             var active = $(".masonry-carousel-item.active");
             var next = $(active).next(".masonry-carousel-item");
@@ -128,44 +111,48 @@ $(function () {
         pen: true,
         distance: 50,
     });
-    $(masonryCarouselImgDiv).on("click", function () {
-        if ($(this).hasClass("grabed")) {
-            $(this).removeClass("grabed");
-            $(this)
-                .css("cursor", "zoom-in")
-                .css("transform", "scale(1)")
-                .css("transition", "0.5s");
-        }
-        else {
-            $(this).addClass("grabed");
-            $(this)
-                .css("cursor", "grab")
-                .css("transform", "scale(1.4)")
-                .css("transition", "0.5s");
-        }
+    $(masonryCarouselZooFigure).ZooMove();
+    $(masonryCarouselZooFigure).on("mouseover", function () {
+        $(this).find(".zoo-img").css("cursor", "zoom-in");
     });
-    $(masonryCarouselImgDiv).mouseover(function (e) {
-        if ($(e.currentTarget).hasClass("grabed")) {
-            $(e.currentTarget).css("cursor", "grab");
-        }
-        else {
-            $(e.currentTarget).css("cursor", "zoom-in");
-        }
-    });
-    $(masonryCarouselImgDiv).mousedown(function (e) {
-        setTimeout(function () {
-            if ($(e.currentTarget).hasClass("grabed")) {
-                $(e.currentTarget).css("cursor", "grabbing");
-            }
-        }, 1000);
-    });
-    $(masonryCarouselImgDiv).mouseup(function (e) {
-        setTimeout(function () {
-            if ($(e.currentTarget).hasClass("grabed")) {
-                $(e.currentTarget).css("cursor", "grab");
-            }
-        }, 1000);
-    });
+    //* Other Way (Native Scale Logic)
+    // $(masonryCarouselImgDiv).on("click", function () {
+    //   if ($(this).hasClass("grabed")) {
+    //     $(this).removeClass("grabed");
+    //     $(this)
+    //       .css("cursor", "zoom-in !important")
+    //       .css("transform", "scale(1) !important")
+    //       .css("transition", "0.5s");
+    //   } else {
+    //     $(this).addClass("grabed");
+    //     $(this)
+    //       .css("cursor", "grab !important")
+    //       .css("transform", "scale(1.4) !important")
+    //       .css("transition", "0.5s");
+    //   }
+    // });
+    // $(masonryCarouselImgDiv).mouseover((e: any) => {
+    //   if ($(e.currentTarget).hasClass("grabed")) {
+    //     $(e.currentTarget).css("cursor", "grab !important");
+    //   } else {
+    //     $(e.currentTarget).css("cursor", "zoom-in !important");
+    //   }
+    // });
+    // $(masonryCarouselImgDiv).mousedown((e: any) => {
+    //   setTimeout(() => {
+    //     if ($(e.currentTarget).hasClass("grabed")) {
+    //       $(e.currentTarget).css("cursor", "grabbing");
+    //     }
+    //   }, 1000);
+    // });
+    // $(masonryCarouselImgDiv).mouseup((e: any) => {
+    //   setTimeout(() => {
+    //     if ($(e.currentTarget).hasClass("grabed")) {
+    //       $(e.currentTarget).css("cursor", "grab");
+    //     }
+    //   }, 1000);
+    // });
+    //* Other Way (Native Scale Logic)
     $(masonryCarouselItem).on("click", function () {
         $(this).closest(".masonry-carousel").removeClass("visible");
     });
@@ -181,7 +168,7 @@ $(function () {
     $(masonryCarouselDesc).click(function (e) {
         e.stopPropagation();
     });
-    $(masonryCarouselImgDiv).click(function (e) {
+    $(masonryCarouselZooFigure).click(function (e) {
         e.stopPropagation();
     });
     // Pure TypeScript
