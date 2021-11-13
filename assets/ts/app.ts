@@ -236,4 +236,13 @@ $(function () {
   }
   // Pure TypeScript
   //Masonry Images Carousel
+
+  //Our Clients
+  (<any>$(".our-clients-logos-carousel")).slick({
+    slidesToShow: 6,
+    slidesToScroll: 2,
+    dots: true,
+    prevArrow: false,
+    nextArrow: false,
+  });
 });

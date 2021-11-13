@@ -588,7 +588,7 @@ main {
               padding: 1.25%;
               z-index: 13;
               background: linear-gradient(
-                90deg, 
+                90deg,
                 rgba(2, 0, 36, 1) 0%,
                 rgba(0, 0, 0, 0.5471230728619573) 0%
               );
@@ -782,6 +782,57 @@ main {
 
               .recent-works-shadow-col-texts {
                 transform: translateY(0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #our-clients {
+    background-color: #e6e6e6;
+    padding: 15% 0;
+
+    .our-clients-container {
+      .our-clients-row {
+        .our-clients-h3 {
+          text-align: center;
+          font-size: 1.1rem;
+          color: @green-text;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        .our-clients-h1 {
+          text-align: center;
+          color: black;
+          padding: 0 7.5%;
+          font-weight: 600;
+          font-size: 3.2rem;
+          margin-bottom: 10%;
+        }
+
+        .our-clients-logos-carousel-col {
+          .our-clients-logos-carousel {
+            .img-div {
+              width: 75%;
+
+              img {
+                width: 100%;
+                filter: grayscale(0);
+              }
+            }
+
+            .owl-dot {
+              &.active {
+                span {
+                  background: @green-text;
+                }
+              }
+
+              span {
+                background: #959595;
               }
             }
           }
