@@ -1,3 +1,3 @@
 # Modern Single-Page Front-End Project
 
-# Using: HTML, LESS & TypeScript (jQuery)
+# Using: HTML, LESS & TypeScript.
