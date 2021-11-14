@@ -259,6 +259,7 @@ main {
         rgba(0, 0, 0, 0.667571252133666) 0%
       ),
       url("../images/hero-bg.jpg");
+    background-attachment: fixed;
     background-size: cover;
 
     .scroll-down {
@@ -810,17 +811,18 @@ main {
           padding: 0 7.5%;
           font-weight: 600;
           font-size: 3.2rem;
-          margin-bottom: 10%;
         }
 
         .our-clients-logos-carousel-col {
           .our-clients-logos-carousel {
+            padding: 5% 0;
+
             .img-div {
               width: 75%;
 
               img {
                 width: 100%;
-                filter: grayscale(0);
+                filter: grayscale(100%);
               }
             }
 
@@ -833,6 +835,20 @@ main {
 
               span {
                 background: #959595;
+              }
+            }
+
+            .slick-dots {
+              li button:hover::before {
+                color: @green-text;
+              }
+
+              li button::before {
+                font-size: 11.5px;
+              }
+
+              li.slick-active button::before {
+                color: @green-text;
               }
             }
           }
