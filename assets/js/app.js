@@ -155,6 +155,7 @@ $(function () {
     //* Other Way (Native Scale Logic)
     $(masonryCarouselItem).on("click", function () {
         $(this).closest(".masonry-carousel").removeClass("visible");
+        $(document.body).css("overflow", "visible");
     });
     var masonryCarouselCounter = $(".masonry-carousel-counter");
     var masonryCarouselHeading = $(".masonry-carousel-heading");
@@ -191,18 +192,41 @@ $(function () {
             // $(masonryCarousel)
             //   .find(".masonry-carousel-counter")
             //   .text(`${masonryIndex + 1} / ${masonryImagesArr.length}`);
+            $(document.body).css("overflow", "hidden");
             $(allMasonryChildren).removeClass("active");
             $(selectedMasonryChild).addClass("active");
         });
     }
     // Pure TypeScript
     //Masonry Images Carousel
-    //Our Clients
+    //Our Clients Logos Carousel (Slick)
     $(".our-clients-logos-carousel").slick({
         slidesToShow: 6,
         slidesToScroll: 2,
         dots: true,
         prevArrow: false,
         nextArrow: false,
+    });
+    //Our Clients Clients Carousel (OwlCarousel)
+    $(".our-clients-clients-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: [
+            "<i class='bi bi-arrow-left-short'></i>",
+            "<i class='bi bi-arrow-right-short'></i>",
+        ],
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            },
+        },
     });
 });

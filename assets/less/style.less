@@ -814,6 +814,8 @@ main {
         }
 
         .our-clients-logos-carousel-col {
+          position: relative;
+
           .our-clients-logos-carousel {
             padding: 5% 0;
 
@@ -850,6 +852,80 @@ main {
               li.slick-active button::before {
                 color: @green-text;
               }
+            }
+          }
+        }
+
+        .our-clients-logos-carousel-col::after {
+          content: "";
+          position: absolute;
+          background-color: #cfcfcf;
+          bottom: -25%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50%;
+          height: 1.5px;
+        }
+
+        .our-clients-clients-carousel-col {
+          padding-top: 15%;
+
+          .our-clients-clients-carousel {
+            position: relative;
+
+            .our-clients-clients-carousel-root {
+              .flexing(center, null, column);
+
+              .our-clients-clients-thoughts {
+                font-family: "Lora", serif !important;
+                text-align: center;
+                font-size: 1.8rem;
+                color: #555555;
+                padding: 0 10%;
+                line-height: 3rem;
+              }
+
+              .img-div {
+                width: 7.5%;
+                margin: 6% 0 1.5% 0;
+
+                img {
+                  width: 100%;
+                  border-radius: 50%;
+                }
+              }
+
+              .our-clients-clients-author-span {
+                display: inline-block;
+                font-weight: 600;
+                font-size: 1.1rem;
+                color: #000;
+              }
+
+              .our-clients-clients-job-span {
+                display: inline-block;
+                color: #757575;
+                font-size: 0.875rem;
+              }
+            }
+
+            .owl-next,
+            .owl-prev {
+              display: inline-block;
+              position: absolute;
+              background: transparent !important;
+              color: black !important;
+              font-size: 2.6rem;
+            }
+
+            .owl-next {
+              top: 11.5%;
+              right: 0;
+            }
+
+            .owl-prev {
+              top: 11.5%;
+              left: 0;
             }
           }
         }
