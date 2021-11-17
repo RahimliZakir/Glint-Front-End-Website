@@ -792,6 +792,7 @@ main {
   }
 
   #our-clients {
+    position: relative;
     background-color: #e6e6e6;
     padding: 15% 0;
 
@@ -917,7 +918,7 @@ main {
               color: black !important;
               font-size: 2.6rem;
             }
- 
+
             .owl-next {
               top: 11.5%;
               right: 0;
@@ -931,5 +932,51 @@ main {
         }
       }
     }
+  }
+
+  #our-clients::after {
+    content: "";
+    position: absolute;
+    background-color: #39b54a;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 2px;
+    height: 115px;
+  }
+
+  #contact-us {
+    position: relative;
+    padding: 13.5% 0;
+    background-image: url(../images/xcontact-bg.jpg.pagespeed.ic.Yg-_T7iMmI.webp);
+
+    .contact-us-h3 {
+      text-align: center;
+      font-size: 1.1rem;
+      color: @green-text;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .contact-us-h1 {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 0 7.5%;
+      font-weight: 600;
+      font-size: 3.2rem;
+      margin-bottom: 10%;
+    }
+  }
+
+  #contact-us::after {
+    content: "";
+    position: absolute;
+    background-color: #39b54a;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 2px;
+    height: 115px;
   }
 }
