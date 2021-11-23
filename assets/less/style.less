@@ -991,20 +991,61 @@ main {
           }
 
           #contact-us-form {
-            .contact-us-input-textarea-col {
+            .contact-us-input-col {
               position: relative;
 
               .contact-us-form-badge {
                 position: absolute;
+                right: 2%;
+                display: none;
+                bottom: -18%;
                 background-color: @green-text;
                 z-index: 5;
                 font-size: 0.7rem;
-                padding: 0.5% 2.5%;
+                font-weight: 600;
                 letter-spacing: 1px;
                 color: #ffffff;
+
+                .contact-us-form-badge-content {
+                  position: relative;
+                  padding: 5px 25px;
+                  .badge-protrusion {
+                    position: absolute;
+                    top: 60%;
+                    transform: rotate(45deg) translate(-50%, -50%);
+                    left: -0.5%;
+                    width: 15px;
+                    height: 15px;
+                    background-color: @green-text;
+                  }
+                }
               }
 
-              input:not([type="submit"]),
+              input:not([type="submit"]) {
+                display: inline-block;
+                background-color: transparent;
+                color: white;
+                outline: none;
+                width: 100%;
+                border: none;
+                font-size: 0.8rem;
+                border-bottom: 1px solid #242424;
+                padding: 5% 0;
+                transition: 0.3s ease-out;
+              }
+
+              input:not([type="submit"]):focus {
+                border-color: @green-text;
+              }
+
+              input:not([type="submit"])::placeholder {
+                font-size: 0.8rem;
+              }
+            }
+
+            .contact-us-textarea-col {
+              position: relative;
+
               textarea {
                 display: inline-block;
                 background-color: transparent;
@@ -1018,14 +1059,39 @@ main {
                 transition: 0.3s ease-out;
               }
 
-              input:not([type="submit"]):focus,
               textarea:focus {
                 border-color: @green-text;
               }
 
-              input:not([type="submit"])::placeholder,
               textarea::placeholder {
                 font-size: 0.8rem;
+              }
+
+              .contact-us-form-badge {
+                position: absolute;
+                display: none;
+                right: 2%;
+                bottom: -2.5%;
+                background-color: @green-text;
+                z-index: 5;
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: #ffffff;
+
+                .contact-us-form-badge-content {
+                  position: relative;
+                  padding: 5px 25px;
+                  .badge-protrusion {
+                    position: absolute;
+                    top: 60%;
+                    transform: rotate(45deg) translate(-50%, -50%);
+                    left: -0.5%;
+                    width: 15px;
+                    height: 15px;
+                    background-color: @green-text;
+                  }
+                }
               }
             }
           }
@@ -1108,5 +1174,142 @@ main {
     top: 0;
     width: 2px;
     height: 115px;
+  }
+}
+footer {
+  padding: 5% 10%;
+  background-color: #111111;
+
+  #footer-info {
+    margin-bottom: 10%;
+    .footer-info-container {
+      .footer-info-row {
+        .footer-info-left-col {
+          .img-div {
+            width: 17.5%;
+            img {
+              width: 100%;
+            }
+          }
+
+          p {
+            margin-top: 7.5%;
+            color: #595959;
+            font-size: 0.9rem;
+            padding-right: 11%;
+            line-height: 27.5px;
+          }
+        }
+
+        .footer-info-right-col {
+          h4 {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+          }
+
+          p {
+            color: #595959;
+            font-size: 0.9rem;
+            padding-right: 11%;
+            line-height: 27.5px;
+            margin: 7.5% 0;
+          }
+
+          #footer-info-form {
+            .footer-info-content-div {
+              position: relative;
+
+              i {
+                position: absolute;
+                display: inline-block;
+                color: white;
+                font-size: 1.6rem;
+                top: 50%;
+                left: 5%;
+                transform: translate(-50%, -50%);
+              }
+
+              input[type="text"] {
+                display: inline-block;
+                width: 100%;
+                padding: 3.5% 35% 3.5% 10%;
+                background-color: #0f0f0f;
+                border: none;
+                outline: none;
+                font-size: 0.8rem;
+                color: white;
+              }
+
+              input[type="text"]::placeholder {
+                color: #3f3f3f;
+                font-size: 0.8rem;
+              }
+
+              button {
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                height: 100%;
+                font-size: 0.7rem;
+                font-weight: 600;
+                padding: 0 7.5%;
+                letter-spacing: 2px;
+                color: white;
+                border: none;
+                background-color: @green-text;
+              }
+            }
+
+            .submit-msg {
+              color: white;
+              font-size: 0.8rem;
+              font-weight: 600;
+              margin-top: 3.5%;
+              padding-left: 2.5%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #copyright {
+    .copyright-container {
+      .copyright-row {
+        position: relative;
+        align-items: center;
+
+        .copyright-left-col {
+          .flexing(null, flex-end);
+          span {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #595959;
+          }
+        }
+        .copyright-right-col {
+          span {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #595959;
+
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .copyright-row::after {
+        content: "";
+        position: absolute;
+        background-color: #1d1d1d;
+        width: 1px;
+        height: 15px;
+        left: 50%;
+      }
+    }
   }
 }

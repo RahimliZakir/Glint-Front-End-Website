@@ -234,8 +234,42 @@ $(function () {
     var contactUsInputs = $("#contact-us-form input[type=text]");
     var contactUsTextarea = $("#contact-us-form textarea");
     var contactUsBtn = $("#contact-us-form input[type=submit]");
-    $(contactUsBtn).on("click", function (e) {
+    $(contactUsForm).on("submit", function (e) {
         e.preventDefault();
-        console.log("Clicked!");
+        var fields = $(e.currentTarget).find("input:not([type=submit]):not([name=subject]), textarea");
+        console.log(fields);
+        var emailPattern = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g);
+        $(fields).filter(function (index, item) {
+            if ($(item).val().length == 0 || $(item).val() == "") {
+                $(item)
+                    .next(".contact-us-form-badge")
+                    .val("THIS FIELD IS REQUIRED.")
+                    .css("display", "block");
+            }
+            else if ($(item).val().length == 1 &&
+                $(item).is("input[type=text]")) {
+                $(item)
+                    .next(".contact-us-form-badge")
+                    .val("PLEASE ENTER AT LEAST 2 CHARACTERS.");
+            }
+            else if ($(item).val().length > 0 &&
+                !emailPattern.test($(item).val()) &&
+                $(item).is("input[type=email]")) {
+                $(item)
+                    .next(".contact-us-form-badge")
+                    .val("PLEASE ENTER A VALID EMAIL ADDRESS.");
+            }
+            else {
+                $(item).next(".contact-us-form-badge").css("display", "none");
+            }
+        });
     });
+    //Contact Us Form Side Edits
+    //Footer Info
+    var footerInfoForm = $("#footer-info-form");
+    $(footerInfoForm).submit(function (e) {
+        e.preventDefault();
+        $(".submit-msg").removeClass("d-none");
+    });
+    //Footer Info
 });

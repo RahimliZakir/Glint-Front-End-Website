@@ -277,9 +277,54 @@ $(function () {
   let contactUsTextarea: any = $("#contact-us-form textarea");
   let contactUsBtn: any = $("#contact-us-form input[type=submit]");
 
-  $(contactUsBtn).on("click", (e) => {
+  $(contactUsForm).on("submit", (e) => {
     e.preventDefault();
 
-    console.log("Clicked!");
+    let fields: any = $(e.currentTarget).find(
+      "input:not([type=submit]):not([name=subject]), textarea"
+    );
+
+    console.log(fields);
+
+    let emailPattern = new RegExp(
+      /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g
+    );
+
+    $(fields).filter(<any>function (index: unknown, item: unknown) {
+      if (($(item).val() as string).length == 0 || $(item).val() == "") {
+        $(item)
+          .next(".contact-us-form-badge")
+          .val("THIS FIELD IS REQUIRED.")
+          .css("display", "block");
+      } else if (
+        ($(item).val() as string).length == 1 &&
+        $(item).is("input[type=text]")
+      ) {
+        $(item)
+          .next(".contact-us-form-badge")
+          .val("PLEASE ENTER AT LEAST 2 CHARACTERS.");
+      } else if (
+        ($(item).val() as string).length > 0 &&
+        !emailPattern.test((<any>$(item)).val()) &&
+        $(item).is("input[type=email]")
+      ) {
+        $(item)
+          .next(".contact-us-form-badge")
+          .val("PLEASE ENTER A VALID EMAIL ADDRESS.");
+      } else {
+        $(item).next(".contact-us-form-badge").css("display", "none");
+      }
+    });
   });
+  //Contact Us Form Side Edits
+
+  //Footer Info
+  let footerInfoForm: any = $("#footer-info-form");
+
+  $(footerInfoForm).submit(function (e) {
+    e.preventDefault();
+
+    $(".submit-msg").removeClass("d-none");
+  });
+  //Footer Info
 });
