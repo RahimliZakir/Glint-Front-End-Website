@@ -948,24 +948,154 @@ main {
   #contact-us {
     position: relative;
     padding: 13.5% 0;
-    background-image: url(../images/xcontact-bg.jpg.pagespeed.ic.Yg-_T7iMmI.webp);
+    background-image: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(26, 26, 26, 0.8160306358871674) 0%
+      ),
+      url(../images/xcontact-bg.jpg.pagespeed.ic.Yg-_T7iMmI.webp);
+    background-position: center;
 
-    .contact-us-h3 {
-      text-align: center;
-      font-size: 1.1rem;
-      color: @green-text;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
+    .contact-us-container {
+      padding: 0 6%;
 
-    .contact-us-h1 {
-      position: relative;
-      text-align: center;
-      color: white;
-      padding: 0 7.5%;
-      font-weight: 600;
-      font-size: 3.2rem;
-      margin-bottom: 10%;
+      .contact-us-row {
+        .contact-us-h3 {
+          text-align: center;
+          font-size: 1.1rem;
+          color: @green-text;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        .contact-us-h1 {
+          position: relative;
+          text-align: center;
+          color: white;
+          padding: 0 7.5%;
+          font-weight: 600;
+          font-size: 3.2rem;
+          margin-bottom: 10%;
+        }
+
+        .contact-us-form-col {
+          background-color: #151515;
+          opacity: 0.8;
+          padding: 5% 5% 7.5%;
+
+          .contact-us-form-heading {
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+          }
+
+          #contact-us-form {
+            .contact-us-input-textarea-col {
+              position: relative;
+
+              .contact-us-form-badge {
+                position: absolute;
+                background-color: @green-text;
+                z-index: 5;
+                font-size: 0.7rem;
+                padding: 0.5% 2.5%;
+                letter-spacing: 1px;
+                color: #ffffff;
+              }
+
+              input:not([type="submit"]),
+              textarea {
+                display: inline-block;
+                background-color: transparent;
+                color: white;
+                outline: none;
+                width: 100%;
+                border: none;
+                font-size: 0.8rem;
+                border-bottom: 1px solid #242424;
+                padding: 5% 0;
+                transition: 0.3s ease-out;
+              }
+
+              input:not([type="submit"]):focus,
+              textarea:focus {
+                border-color: @green-text;
+              }
+
+              input:not([type="submit"])::placeholder,
+              textarea::placeholder {
+                font-size: 0.8rem;
+              }
+            }
+          }
+
+          input[type="submit"] {
+            display: inline-block;
+            margin-top: 5%;
+            padding: 2.5% 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 2px;
+            background-color: @green-text;
+            border: none;
+            color: white;
+            outline: none;
+            width: 100%;
+          }
+        }
+
+        .contact-us-info-col {
+          background-color: #101010;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+          padding: 5% 5% 7.5%;
+
+          .contact-us-info-heading {
+            color: white;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 600;
+          }
+
+          .contact-us-where-find-us-div,
+          .contact-us-where-email-us-at-div,
+          .contact-us-where-call-us-at-div {
+            h5 {
+              font-weight: 600;
+              font-size: 0.9rem;
+              color: @green-text;
+            }
+
+            p {
+              color: #717171;
+            }
+          }
+
+          .contact-us-icons-ul {
+            .flexing;
+
+            li {
+              a {
+                display: inline-block;
+                color: white;
+                font-size: 1.2rem;
+                transition: 0.3s ease-in;
+              }
+
+              a:hover {
+                color: @green-text;
+              }
+            }
+
+            li:not(:last-child) {
+              margin-right: 15%;
+            }
+          }
+        }
+      }
     }
   }
 

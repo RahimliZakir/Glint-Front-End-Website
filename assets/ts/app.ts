@@ -270,4 +270,16 @@ $(function () {
       },
     },
   });
+
+  //Contact Us Form Side Edits
+  let contactUsForm: any = $("#contact-us-form");
+  let contactUsInputs: any = $("#contact-us-form input[type=text]");
+  let contactUsTextarea: any = $("#contact-us-form textarea");
+  let contactUsBtn: any = $("#contact-us-form input[type=submit]");
+
+  $(contactUsBtn).on("click", (e) => {
+    e.preventDefault();
+
+    console.log("Clicked!");
+  });
 });

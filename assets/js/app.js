@@ -229,4 +229,13 @@ $(function () {
             },
         },
     });
+    //Contact Us Form Side Edits
+    var contactUsForm = $("#contact-us-form");
+    var contactUsInputs = $("#contact-us-form input[type=text]");
+    var contactUsTextarea = $("#contact-us-form textarea");
+    var contactUsBtn = $("#contact-us-form input[type=submit]");
+    $(contactUsBtn).on("click", function (e) {
+        e.preventDefault();
+        console.log("Clicked!");
+    });
 });
