@@ -165,18 +165,16 @@ aside.show {
 
 header {
   nav {
-    position: relative;
-    z-index: 999;
+    position: absolute;
+    left: 2.5%;
+    z-index: 4;
     padding: 2.5% 0;
     .nav-container {
       .nav-row {
         align-items: center;
         .nav-left {
-          position: absolute;
-          top: 0;
-          left: 0;
           .img-div {
-            width: 15%;
+            width: 75%;
             img {
               width: 100%;
             }
@@ -184,6 +182,9 @@ header {
         }
 
         .nav-right {
+          position: fixed;
+          right: 2.5%;
+          z-index: 999;
           .flexing(center, flex-end);
 
           .sidebar-btn {
@@ -825,7 +826,14 @@ main {
 
               img {
                 width: 100%;
-                filter: grayscale(100%);
+                opacity: 0.5;
+                transition: 0.5s ease-out;
+              }
+            }
+
+            .img-div:hover {
+              img {
+                opacity: 1;
               }
             }
 

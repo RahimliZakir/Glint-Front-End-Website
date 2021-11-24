@@ -27,6 +27,14 @@ $(function () {
     e.stopPropagation();
   });
 
+  let asideLinksA: any = $(".aside-links a");
+
+  $(asideLinksA).on("click", (e) => {
+    setTimeout(() => {
+      $(e.currentTarget).closest("aside").removeClass("show");
+    }, 1000);
+  });
+
   $(sidebarBtn).on("click", function (e) {
     e.stopPropagation();
     $(aside).addClass("show");
