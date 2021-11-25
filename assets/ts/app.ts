@@ -1,4 +1,12 @@
 $(function () {
+  //Loader
+  let loaderRoot: any = $(".loader-root");
+
+  setTimeout(() => {
+    $(loaderRoot).removeClass("load");
+  }, 1000);
+  //Loader
+
   let scrollTop: any = $(".scroll-top");
 
   let sidebarBtn: any = $(".sidebar-btn");
