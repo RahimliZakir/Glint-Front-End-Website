@@ -243,36 +243,134 @@ $(function () {
     });
     //Contact Us Form Side Edits
     var contactUsForm = $("#contact-us-form");
-    var contactUsInputs = $("#contact-us-form input[type=text]");
-    var contactUsTextarea = $("#contact-us-form textarea");
-    var contactUsBtn = $("#contact-us-form input[type=submit]");
+    var contactUsNameInput = $("#contact-us-form input[name=name]");
+    var contactUsEmailInput = $("#contact-us-form input[name=email]");
+    var contactUsTextareaInput = $("#contact-us-form textarea");
     $(contactUsForm).on("submit", function (e) {
         e.preventDefault();
-        var fields = $(e.currentTarget).find("input:not([type=submit]):not([name=subject]), textarea");
-        console.log(fields);
         var emailPattern = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g);
-        $(fields).filter(function (index, item) {
-            if ($(item).val().length == 0 || $(item).val() == "") {
-                $(item)
+        if ($(contactUsNameInput).val() == "" ||
+            $(contactUsNameInput).val().length == 0) {
+            $(contactUsNameInput)
+                .next(".contact-us-form-badge")
+                .css("display", "block")
+                .find(".contact-us-form-badge-content>span")
+                .text("THIS FIELD IS REQUIRED.");
+        }
+        else if ($(contactUsNameInput).val().length == 1) {
+            $(contactUsNameInput)
+                .next(".contact-us-form-badge")
+                .css("display", "block")
+                .find(".contact-us-form-badge-content>span")
+                .text("PLEASE ENTER AT LEAST 2 CHARACTERS.");
+        }
+        else {
+            $(contactUsNameInput)
+                .next(".contact-us-form-badge")
+                .css("display", "none")
+                .find(".contact-us-form-badge-content>span")
+                .text("");
+        }
+        $(contactUsNameInput).keyup(function () {
+            if ($(contactUsNameInput).val() == "" ||
+                $(contactUsNameInput).val().length == 0) {
+                $(contactUsNameInput)
                     .next(".contact-us-form-badge")
-                    .val("THIS FIELD IS REQUIRED.")
-                    .css("display", "block");
+                    .css("display", "block")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("THIS FIELD IS REQUIRED.");
             }
-            else if ($(item).val().length == 1 &&
-                $(item).is("input[type=text]")) {
-                $(item)
+            else if ($(contactUsNameInput).val().length == 1) {
+                $(contactUsNameInput)
                     .next(".contact-us-form-badge")
-                    .val("PLEASE ENTER AT LEAST 2 CHARACTERS.");
-            }
-            else if ($(item).val().length > 0 &&
-                !emailPattern.test($(item).val()) &&
-                $(item).is("input[type=email]")) {
-                $(item)
-                    .next(".contact-us-form-badge")
-                    .val("PLEASE ENTER A VALID EMAIL ADDRESS.");
+                    .css("display", "block")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("PLEASE ENTER AT LEAST 2 CHARACTERS.");
             }
             else {
-                $(item).next(".contact-us-form-badge").css("display", "none");
+                $(contactUsNameInput)
+                    .next(".contact-us-form-badge")
+                    .css("display", "none")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("");
+            }
+        });
+        if ($(contactUsEmailInput).val() == "" ||
+            $(contactUsEmailInput).val().length == 0) {
+            $(contactUsEmailInput)
+                .next(".contact-us-form-badge")
+                .css("display", "block")
+                .find(".contact-us-form-badge-content>span")
+                .text("THIS FIELD IS REQUIRED.");
+        }
+        else if (!emailPattern.test($(contactUsEmailInput).val())) {
+            $(contactUsEmailInput)
+                .next(".contact-us-form-badge")
+                .css("display", "block")
+                .find(".contact-us-form-badge-content>span")
+                .text("PLEASE ENTER A VALID EMAIL ADDRESS.");
+        }
+        else {
+            $(contactUsEmailInput)
+                .next(".contact-us-form-badge")
+                .css("display", "none")
+                .find(".contact-us-form-badge-content>span")
+                .text("");
+        }
+        $(contactUsEmailInput).keyup(function () {
+            if ($(contactUsEmailInput).val() == "" ||
+                $(contactUsEmailInput).val().length == 0) {
+                $(contactUsEmailInput)
+                    .next(".contact-us-form-badge")
+                    .css("display", "block")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("THIS FIELD IS REQUIRED.");
+            }
+            else if (!emailPattern.test($(contactUsEmailInput).val())) {
+                $(contactUsEmailInput)
+                    .next(".contact-us-form-badge")
+                    .css("display", "block")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("PLEASE ENTER A VALID EMAIL ADDRESS.");
+            }
+            else {
+                $(contactUsEmailInput)
+                    .next(".contact-us-form-badge")
+                    .css("display", "none")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("");
+            }
+        });
+        if ($(contactUsTextareaInput).val() == "" ||
+            $(contactUsTextareaInput).val().length == 0) {
+            $(contactUsTextareaInput)
+                .next(".contact-us-form-badge")
+                .css("display", "block")
+                .find(".contact-us-form-badge-content>span")
+                .text("THIS FIELD IS REQUIRED.");
+        }
+        else {
+            $(contactUsTextareaInput)
+                .next(".contact-us-form-badge")
+                .css("display", "none")
+                .find(".contact-us-form-badge-content>span")
+                .text("");
+        }
+        $(contactUsTextareaInput).on("keyup", function () {
+            if ($(contactUsTextareaInput).val() == "" ||
+                $(contactUsTextareaInput).val().length == 0) {
+                $(contactUsTextareaInput)
+                    .next(".contact-us-form-badge")
+                    .css("display", "block")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("THIS FIELD IS REQUIRED.");
+            }
+            else {
+                $(contactUsTextareaInput)
+                    .next(".contact-us-form-badge")
+                    .css("display", "none")
+                    .find(".contact-us-form-badge-content>span")
+                    .text("");
             }
         });
     });
