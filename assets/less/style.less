@@ -1398,8 +1398,8 @@ footer {
     nav {
       top: 2.5%;
 
-      .nav-left {
-      }
+      // .nav-left {
+      // }
 
       .nav-right {
         .sidebar-btn {
@@ -1413,7 +1413,7 @@ footer {
 
   main {
     #welcome {
-      padding: 45% 0;
+      padding: 60% 0;
       background-position: center;
 
       .welcome-container {
@@ -1457,7 +1457,7 @@ footer {
 
       .scroll-down {
         right: 12.5%;
-        bottom: 8.5%;
+        bottom: 7.5%;
       }
     }
 
@@ -1466,10 +1466,86 @@ footer {
     }
 
     #we-are-glint {
+      padding: 30% 0;
+
       .we-are-glint-container {
         .we-are-glint-row {
+          .we-are-glint-h3 {
+            font-size: 0.9rem;
+          }
+
+          .we-are-glint-h1 {
+            font-size: 2.2rem;
+          }
+
+          .we-are-glint-description {
+            font-size: 1.1rem;
+            padding: 4.5% 4.5% 0;
+          }
+
           .we-are-glint-stats-ul {
             .flexing(null, null, column);
+          }
+
+          .we-are-glint-stats-ul {
+            li {
+              margin: 7.5% 0;
+
+              h5 {
+                font-size: 1.1rem;
+              }
+            }
+
+            li:not(:last-child)::after {
+              top: auto;
+              right: auto;
+              height: 1px;
+              left: 50%;
+              bottom: -20%;
+              width: 75%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+    }
+
+    #we-are-glint::after {
+      height: 75px;
+    }
+
+    #what-we-do {
+      padding: 27.5% 0;
+
+      .what-we-do-container {
+        .what-we-do-row {
+          .what-we-do-h3 {
+            font-size: 0.9rem;
+          }
+
+          .what-we-do-h1 {
+            font-size: 1.6rem;
+            padding: 0 7.5%;
+          }
+
+          .what-we-do-h1::after {
+            bottom: -15%;
+          }
+
+          .what-we-do-services-col {
+            margin: 5% 0;
+
+            .what-we-do-left {
+              .flexing(null, center);
+            }
+
+            .what-we-do-right {
+              text-align: center;
+
+              h3 {
+                margin: 5.5% 0;
+              }
+            }
           }
         }
       }
