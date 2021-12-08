@@ -218,6 +218,29 @@ $(function () {
         dots: true,
         prevArrow: false,
         nextArrow: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 1008,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2,
+                },
+            },
+        ],
     });
     //Our Clients Clients Carousel (OwlCarousel)
     $(".our-clients-clients-carousel").owlCarousel({
