@@ -1392,18 +1392,22 @@ footer {
   }
 }
 
-/* Mobile Respinsive */
+//* Mobile Responsive
 @media (max-width: 576px) {
   .scroll-top-div {
     display: none;
   }
 
+  aside {
+    width: 75%;
+    right: -75%;
+    padding-top: 10%;
+    padding-left: 5%;
+  }
+
   header {
     nav {
       top: 2.5%;
-
-      // .nav-left {
-      // }
 
       .nav-right {
         .sidebar-btn {
@@ -1560,6 +1564,11 @@ footer {
         .masonry-carousel-row {
           .masonry-carousel-box {
             .masonry-carousel-item {
+              figure {
+                height: 250px;
+                width: 100%;
+              }
+
               .carousel-article-side-div {
                 display: none;
               }
