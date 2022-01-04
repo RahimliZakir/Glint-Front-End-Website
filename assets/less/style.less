@@ -1392,6 +1392,146 @@ footer {
   }
 }
 
+//* Tablet Responsive
+@media (max-width: 991px) {
+  aside {
+    width: 35%;
+    right: -35%;
+  }
+
+  .scroll-top-div {
+    .scroll-top {
+      right: 2.5%;
+    }
+  }
+
+  #welcome {
+    height: 100vh;
+    .flexing(center);
+    background-position: center;
+    .welcome-container {
+      .welcome-row {
+        .welcome-left {
+          padding: 0 0 0 10% !important;
+
+          h1 {
+            font-size: 2.4rem !important;
+            line-height: 3rem !important;
+          }
+
+          .welcome-buttons-box {
+            .left-welcome-btn,
+            .right-welcome-btn {
+              padding: 3.5% 5% !important;
+            }
+          }
+        }
+
+        .welcome-right {
+          padding: 5.5% 3.5% 0 0 !important;
+
+          .welcome-right-icons {
+            li:not(:last-child) {
+              margin-bottom: 10% !important;
+            }
+
+            li {
+              .welcome-icon-h6 {
+                right: 30%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .scroll-down {
+      right: 12% !important;
+      bottom: 10% !important;
+    }
+  }
+
+  #we-are-glint {
+    height: 100vh;
+    padding: 17.5% 0 6.5% 0 !important;
+    .we-are-glint-container {
+      .we-are-glint-row {
+        .we-are-glint-description {
+          padding: 0 9%;
+          font-size: 1.3rem;
+        }
+
+        .we-are-glint-h1::after {
+          bottom: -30% !important;
+        }
+
+        .we-are-glint-stats-ul {
+          flex-wrap: wrap;
+          li {
+            width: 50%;
+          }
+
+          li::after {
+            right: 0 !important;
+          }
+
+          li:first-of-type::after {
+            bottom: 5% !important;
+            top: auto !important;
+          }
+
+          li:nth-of-type(3)::after {
+            top: 5% !important;
+          }
+
+          li:nth-of-type(even)::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  #what-we-do {
+    padding: 20% 0 !important;
+
+    .what-we-do-container {
+      .what-we-do-row {
+        .flexing(center, null , column);
+
+        .what-we-do-h1 {
+          font-size: 2.3rem !important;
+          padding: 0 !important;
+        }
+
+        .what-we-do-services-col {
+          width: 65%;
+          margin-bottom: 5% !important;
+
+          .what-we-do-left {
+            .flexing(null, center);
+            margin-bottom: 5%;
+          }
+
+          .what-we-do-right {
+            padding: 0;
+
+            h3,
+            p {
+              text-align: center;
+            }
+
+            h3 {
+              font-size: 1.8rem;
+              font-weight: 500 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 //* Mobile Responsive
 @media (max-width: 576px) {
   .scroll-top-div {
@@ -1808,6 +1948,10 @@ footer {
                   width: 100%;
                   padding: 5% 7.5%;
                 }
+              }
+
+              .submit-msg {
+                text-align: center;
               }
             }
           }
