@@ -271,10 +271,10 @@ $(function () {
         },
       },
       {
-        breakpoint: 1008,
+        breakpoint: 991,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 3,
+          slidesToScroll: 2,
         },
       },
       {
@@ -296,12 +296,12 @@ $(function () {
       "<i class='bi bi-arrow-left-short'></i>",
       "<i class='bi bi-arrow-right-short'></i>",
     ],
-    dots: false,
+    dots: true,
     responsive: {
       0: {
         items: 1,
       },
-      600: {
+      600: { 
         items: 1,
       },
       1000: {
