@@ -1697,7 +1697,31 @@ footer {
 
           .contact-us-info-col {
             background-color: transparent;
-            .flexing(center, null, column);
+            display: block;
+
+            .contact-us-info-heading {
+              display: none;
+            }
+
+            .contact-us-where-find-us-div,
+            .contact-us-where-email-us-at-div,
+            .contact-us-where-call-us-at-div {
+              text-align: center;
+              margin-top: 15%;
+
+              p {
+                font-size: 0.9rem;
+              }
+            }
+
+            .contact-us-icons-ul {
+              margin-top: 15%;
+              .flexing(null, center);
+
+              li:not(:last-child) {
+                margin-right: 2.5%;
+              }
+            }
           }
         }
       }
