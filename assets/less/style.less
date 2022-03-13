@@ -1258,6 +1258,7 @@ main {
     height: 115px;
   }
 }
+
 footer {
   padding: 5% 10%;
   background-color: #111111;
@@ -1700,6 +1701,7 @@ footer {
 
     #we-are-glint {
       padding: 30% 0 !important;
+      height: auto;
 
       .we-are-glint-container {
         .we-are-glint-row {
@@ -1718,11 +1720,13 @@ footer {
 
           .we-are-glint-stats-ul {
             .flexing(null, null, column) !important;
+            flex-wrap: nowrap;
           }
 
           .we-are-glint-stats-ul {
             li {
               margin: 7.5% 0 !important;
+              width: 100%;
 
               h5 {
                 font-size: 1.1rem;
@@ -1730,11 +1734,11 @@ footer {
             }
 
             li:not(:last-child)::after {
-              top: auto;
-              right: auto;
+              top: auto !important;
+              right: auto !important;
               height: 1px;
               left: 50%;
-              bottom: -20%;
+              bottom: -20% !important;
               width: 75%;
               transform: translate(-50%, -50%);
             }
@@ -1757,8 +1761,8 @@ footer {
           }
 
           .what-we-do-h1 {
-            font-size: 1.6rem;
-            padding: 0 7.5%;
+            font-size: 1.6rem !important;
+            padding: 0 7.5% !important;
           }
 
           .what-we-do-h1::after {
