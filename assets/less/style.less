@@ -1743,6 +1743,10 @@ footer {
               width: 75%;
               transform: translate(-50%, -50%);
             }
+
+            li:nth-of-type(even)::after {
+              display: inline-block;
+            }
           }
         }
       }
@@ -1849,46 +1853,48 @@ footer {
       padding: 35% 0;
 
       .our-clients-container {
+        .our-clients-h3 {
+          font-size: 0.9rem;
+        }
+
+        .our-clients-h1 {
+          font-size: 1.8rem !important;
+          margin-bottom: 12.5%;
+          padding: 0 3.5%;
+        }
+
         .our-clients-row {
-          .our-clients-h3 {
-            font-size: 0.9rem;
-          }
-
-          .our-clients-h1 {
-            font-size: 1.8rem;
-            margin-bottom: 12.5%;
-            padding: 0 3.5%;
-          }
-
           .our-clients-logos-carousel-col {
             .our-clients-logos-carousel {
               .our-clients-logos-item {
                 .flexing(null, center);
                 .img-div {
-                  width: 50%;
+                  width: 60%;
                 }
               }
             }
           }
 
           .our-clients-logos-carousel-col::after {
-            bottom: -40%;
+            bottom: -30% !important;
           }
 
           .our-clients-clients-carousel-col {
             padding-top: 25%;
 
+            .item {
+              .our-clients-clients-thoughts {
+                font-size: 1.4rem !important;
+                color: #555555 !important;
+                line-height: 2rem !important;
+                padding: 0 1.5% !important;
+              }
+            }
+
             .our-clients-clients-carousel {
               .our-clients-clients-carousel-root {
-                .our-clients-clients-thoughts {
-                  font-size: 1.1rem;
-                  color: #555555;
-                  line-height: 2rem;
-                  padding: 0 2.5%;
-                }
-
                 .img-div {
-                  width: 22.5%;
+                  width: 22.5% !important;
                   margin: 17% 0 3% 0;
                 }
 
@@ -1907,7 +1913,7 @@ footer {
 
               .owl-prev,
               .owl-next {
-                bottom: -45%;
+                bottom: 10%;
               }
             }
           }

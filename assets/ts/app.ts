@@ -280,7 +280,7 @@ $(function () {
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 2,
           slidesToScroll: 2,
         },
       },
@@ -300,6 +300,7 @@ $(function () {
     responsive: {
       0: {
         items: 1,
+        dots: false,
       },
       600: {
         items: 1,
