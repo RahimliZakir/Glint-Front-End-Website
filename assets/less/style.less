@@ -1399,6 +1399,16 @@ footer {
 
 //* Tablet Responsive
 @media (max-width: 991px) {
+  header {
+    nav {
+      padding: 4.5% 0;
+
+      .nav-right {
+        top: 2.5%;
+      }
+    }
+  }
+
   aside {
     width: 35%;
     right: -35%;
@@ -1467,6 +1477,7 @@ footer {
         }
 
         .we-are-glint-h1::after {
+          width: 80% !important;
           bottom: -30% !important;
         }
 
@@ -1712,6 +1723,10 @@ footer {
 
           .we-are-glint-h1 {
             font-size: 2.2rem !important;
+          }
+
+          .we-are-glint-h1::after {
+            width: 50% !important;
           }
 
           .we-are-glint-description {
