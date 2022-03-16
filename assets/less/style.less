@@ -1513,15 +1513,19 @@ footer {
 
     .what-we-do-container {
       .what-we-do-row {
-        .flexing(center, null , column);
+        .flexing;
 
         .what-we-do-h1 {
-          font-size: 2.3rem !important;
-          padding: 0 !important;
+          font-size: 2.6rem !important;
+          padding: 0 7.5% !important;
+        }
+
+        .what-we-do-h1::after {
+          width: 80% !important;
+          bottom: -30% !important;
         }
 
         .what-we-do-services-col {
-          width: 65%;
           margin-bottom: 5% !important;
 
           .what-we-do-left {
@@ -1530,16 +1534,11 @@ footer {
           }
 
           .what-we-do-right {
-            padding: 0;
-
-            h3,
-            p {
-              text-align: center;
-            }
+            padding-left: 5%;
 
             h3 {
-              font-size: 1.8rem;
-              font-weight: 500 !important;
+              font-size: 1.6rem;
+              font-weight: 600 !important;
             }
           }
         }
@@ -1600,6 +1599,7 @@ footer {
       .our-clients-row {
         .our-clients-logos-carousel-col::after {
           bottom: -20% !important;
+          width: 80% !important;
         }
 
         .our-clients-clients-carousel-col {
@@ -1607,7 +1607,7 @@ footer {
             .our-clients-clients-thoughts {
               font-size: 1.4rem !important;
               line-height: 2.6rem !important;
-              padding: 0 3.5% !important;
+              padding: 0 10% !important;
             }
 
             .img-div {
@@ -1623,6 +1623,68 @@ footer {
         .owl-prev,
         .owl-next {
           top: 70% !important;
+        }
+      }
+    }
+  }
+
+  #contact-us {
+    padding: 20% 0 !important;
+
+    .contact-us-container {
+      .contact-us-row {
+        .contact-us-h1 {
+          padding: 0 !important;
+          font-size: 2.6rem !important;
+        }
+
+        .contact-us-info-col {
+          .flexing(null,null,column);
+          padding: 10% 10% 7.5% !important;
+
+          .contact-us-info-heading {
+            display: none;
+          }
+
+          .contact-us-where-find-us-div,
+          .contact-us-where-email-us-at-div,
+          .contact-us-where-call-us-at-div {
+            margin-bottom: 7.5%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 5% 0;
+
+    #footer-info {
+      .footer-info-container {
+        .footer-info-row {
+          .footer-info-left-col {
+            .img-div {
+              width: 27.5%;
+            }
+
+            p {
+              padding: 0;
+            }
+          }
+
+          .footer-info-right-col {
+            p {
+              margin: 11.5% 0;
+            }
+
+            #footer-info-form {
+              .footer-info-content-div {
+                input[type="text"] {
+                  padding: 5% 35% 5% 12%;;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -1787,6 +1849,7 @@ footer {
 
           .what-we-do-h1::after {
             bottom: -15%;
+            width: 50% !important;
           }
 
           .what-we-do-services-col {
@@ -1892,6 +1955,7 @@ footer {
 
           .our-clients-logos-carousel-col::after {
             bottom: -30% !important;
+            width: 50% !important;
           }
 
           .our-clients-clients-carousel-col {
@@ -1960,8 +2024,8 @@ footer {
           }
 
           .contact-us-h1 {
-            font-size: 1.7rem;
-            padding: 0 7.5%;
+            font-size: 1.7rem !important;
+            padding: 0 7.5% !important;
           }
 
           .contact-us-form-col {

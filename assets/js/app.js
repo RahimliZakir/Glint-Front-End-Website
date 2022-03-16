@@ -229,7 +229,7 @@ $(function () {
             {
                 breakpoint: 991,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 4,
                     slidesToScroll: 2,
                 },
             },
@@ -259,6 +259,7 @@ $(function () {
             },
             600: {
                 items: 1,
+                dots: false,
             },
             1000: {
                 items: 1,
