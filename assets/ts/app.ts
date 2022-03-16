@@ -1,9 +1,14 @@
+declare let AOS: any;
+
 $(function () {
   //Loader
   let loaderRoot: any = $(".loader-root");
 
   setTimeout(() => {
     $(loaderRoot).removeClass("load");
+    // AOS
+    AOS.init();
+    // AOS
   }, 1000);
   //Loader
 

@@ -3,6 +3,9 @@ $(function () {
     var loaderRoot = $(".loader-root");
     setTimeout(function () {
         $(loaderRoot).removeClass("load");
+        // AOS
+        AOS.init();
+        // AOS
     }, 1000);
     //Loader
     var scrollTop = $(".scroll-top");
